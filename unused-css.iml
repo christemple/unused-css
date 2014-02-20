@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RUBY_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/log" />
+      <excludeFolder url="file://$MODULE_DIR$/tmp" />
+    </content>
+    <orderEntry type="jdk" jdkName="RVM: ruby-2.0.0-p247 [unused-css]" jdkType="RUBY_SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="addressable (v2.3.5, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.2, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.3.5, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="childprocess (v0.5.1, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="css_parser (v1.3.5, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="cucumber (v1.3.10, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="daemons (v1.1.9, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="diff-lcs (v1.2.5, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="eventmachine (v1.0.3, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ffi (v1.9.3, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="gherkin (v2.12.2, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.8.4, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="multi_test (v0.0.3, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack (v1.5.2, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-protection (v1.5.2, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rake (v10.1.0, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubyzip (v1.1.0, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v2.39.0, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sinatra (v1.4.4, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="thin (v1.6.1, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tilt (v1.4.1, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="watir-webdriver (v0.6.7, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="websocket (v1.0.7, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+  </component>
+</module>
+
