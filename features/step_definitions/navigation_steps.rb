@@ -4,7 +4,7 @@ Given "I go to the home page" do
 
   $unused_css.add_stylesheet stylesheet
   $unused_css.stylesheet(stylesheet).styles.each do |style|
-    $unused_css.stylesheet(stylesheet).delete_style(style) if $browser.element(css: style).exist?
+    $unused_css.stylesheet(stylesheet).styles.delete(style) if $browser.element(css: style).exist?
   end
 end
 
@@ -15,7 +15,7 @@ Given "I go to a page with 2 stylesheets" do
   $unused_css.add_stylesheets stylesheets
   stylesheets.each do |stylesheet|
     $unused_css.stylesheet(stylesheet).styles.each do |style|
-      $unused_css.stylesheet(stylesheet).delete_style(style) if $browser.element(css: style).exist?
+      $unused_css.stylesheet(stylesheet).styles.delete(style) if $browser.element(css: style).exist?
     end
   end
 end

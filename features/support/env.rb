@@ -17,10 +17,6 @@ class Stylesheet
     @parser.load_uri! @uri
     @parser.each_selector { |styles| @styles << styles }
   end
-
-  def delete_style (style)
-    @styles.delete style
-  end
 end
 
 class UnusedCSS
