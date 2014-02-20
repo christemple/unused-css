@@ -1,0 +1,9 @@
+.notification {
+    color: red;
+    font-size: 40px;
+}
+
+.old-error {
+    color: yellow;
+    font-size: 60px;
+}
