@@ -7,12 +7,16 @@ class UnusedCSS
     @stylesheets = []
   end
 
-  def add_stylesheet (stylesheet_uri)
-    @stylesheets << Stylesheet.new(stylesheet_uri)
+  def add_stylesheet uri
+    @stylesheets << Stylesheet.new(uri) unless stylesheet_exists? uri
   end
 
-  def add_stylesheets (stylesheet_uris)
-    stylesheet_uris.each { |uri| add_stylesheet uri }
+  def stylesheet_exists? uri
+    @stylesheets.any? { |stylesheet| stylesheet.uri == uri }
+  end
+
+  def add_stylesheets uris
+    uris.each { |uri| add_stylesheet uri }
   end
 
   def stylesheet(stylesheet_uri)
@@ -32,7 +36,7 @@ class UnusedCSS
         @unused_css.add_stylesheets stylesheets
         stylesheets.each do |stylesheet|
           @unused_css.stylesheet(stylesheet).styles.each do |style|
-            @unused_css.stylesheet(stylesheet).styles.delete(style) if $browser.element(css: style).exist?
+            @unused_css.stylesheet(stylesheet).styles.delete(style) if self.element(css: style).exist?
           end
         end
       end
