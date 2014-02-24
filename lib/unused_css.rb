@@ -15,10 +15,10 @@ class UnusedCSS
         stylesheets = elements(tag_name: 'link').map {|stylesheet| stylesheet.attribute_value('href') }
         @unused_css.stylesheets.add stylesheets
         stylesheets.each do |stylesheet|
-          @unused_css.stylesheets.stylesheet(stylesheet).styles.each do |style|
-            @unused_css.stylesheets.stylesheet(stylesheet).styles.delete(style) if self.element(css: style).exist?
+          @unused_css.stylesheets[stylesheet].styles.each do |style|
+            @unused_css.stylesheets[stylesheet].styles.delete(style) if self.element(css: style).exist?
           end
-          @unused_css.stylesheets.stylesheet(stylesheet).remove_pseudo_styles!
+          @unused_css.stylesheets[stylesheet].remove_pseudo_styles!
         end
       end
     end

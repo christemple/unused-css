@@ -36,7 +36,7 @@ class Stylesheets
     @stylesheets.any? { |stylesheet| stylesheet.uri == uri }
   end
 
-  def stylesheet(uri)
+  def [](uri)
     @stylesheets.find { |stylesheet| stylesheet.uri == uri }
   end
 
