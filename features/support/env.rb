@@ -9,4 +9,5 @@ $unused_css.watch! $browser
 
 at_exit do
   $browser.close
+  $unused_css.report!
 end

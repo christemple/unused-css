@@ -1,8 +1,17 @@
 require 'rake'
+require 'cucumber/rake/task'
 
 desc "Start the application"
 task :default do
   start_application!
+end
+
+Cucumber::Rake::Task.new(:features) do |task|
+  task.cucumber_opts = "features --format pretty"
+end
+
+Cucumber::Rake::Task.new(:report, "Run Cucumber features for report") do |task|
+  task.cucumber_opts = "features_for_report --format pretty"
 end
 
 def start_application!
