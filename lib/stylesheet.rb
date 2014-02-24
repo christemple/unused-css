@@ -14,6 +14,10 @@ class Stylesheet
     @parser.load_uri! @uri
     @parser.each_selector { |styles| @styles << styles }
   end
+
+  def remove_pseudo_styles!
+    @styles.delete_if { |style| style.match /::?[\w\-]+/ }
+  end
 end
 
 class Stylesheets

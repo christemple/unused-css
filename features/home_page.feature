@@ -14,3 +14,13 @@ Feature: Home page
     Then I should see style '.sub-heading span' was not used
     Then I should see style '.old-error' was not used
 
+
+  Scenario: Going to a page with styles for hover state
+    Given I go to a page with 2 stylesheets
+    Then I should see style '#heading' was used
+    Then I should see style '.notification' was used
+    Then I should see style '.notification:hover' was used
+    Then I should see style '.sub-heading' was not used
+    Then I should see style '.sub-heading span' was not used
+    Then I should see style '.old-error' was not used
+

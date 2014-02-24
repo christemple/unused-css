@@ -18,6 +18,7 @@ class UnusedCSS
           @unused_css.stylesheets.stylesheet(stylesheet).styles.each do |style|
             @unused_css.stylesheets.stylesheet(stylesheet).styles.delete(style) if self.element(css: style).exist?
           end
+          @unused_css.stylesheets.stylesheet(stylesheet).remove_pseudo_styles!
         end
       end
     end

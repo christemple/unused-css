@@ -3,6 +3,11 @@
     font-size: 40px;
 }
 
+.notification:hover {
+    color: white;
+    background-color: red;
+}
+
 .old-error {
     color: yellow;
     font-size: 60px;
