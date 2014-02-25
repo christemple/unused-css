@@ -3,5 +3,5 @@ before_install:
   - "sh -e /etc/init.d/xvfb start"
 
 script:
-  - "rake features"
-  - "rake report"
+  - "bundle exec rake features"
+  - "bundle exec rake report"
