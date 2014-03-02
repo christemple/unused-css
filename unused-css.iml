@@ -25,7 +25,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rack-protection (v1.5.2, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v10.1.1, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v1.1.0, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v2.40.0, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="selenium-webdriver (v2.39.0, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sinatra (v1.4.4, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thin (v1.6.1, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v1.4.1, RVM: ruby-2.0.0-p247 [unused-css]) [gem]" level="application" />
