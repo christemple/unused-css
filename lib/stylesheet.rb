@@ -44,8 +44,4 @@ class Stylesheets
   def styles
     @stylesheets.inject(Set.new) {|styles, stylesheet| styles.merge stylesheet.styles }
   end
-
-  def each &block
-    @stylesheets.each &block
-  end
 end
