@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    unused_css (0.0.1)
+    unused_css (0.1.0)
       css_parser
 
 GEM
