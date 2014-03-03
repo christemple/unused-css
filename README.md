@@ -5,6 +5,13 @@ Unused CSS
 
 A Ruby gem, built from a need, to watch a suite of functional tests and gather all of the unused CSS styles.
 
+Install
+-------
+
+```ruby
+gem install unused_css
+```
+
 
 How to use
 ----------
@@ -43,14 +50,16 @@ Checking for unused css/styles on your terms (AJAX scenario)
 ----------
 
 I thought it would be nice to also put you in control of when you want to check for used styles on a page.
+A page that relies on AJAX to dynamically load content will likely benefit from being able to do so.
 
-A page that relies on AJAX to dynamically load content will likely benefit from being able to do so:
-
-I one of the step definitions you can simply call:
+In one of your step definitions you can simply call:
 
 ```ruby
 When(/^I recheck the styles on the page$/) do
-    # Where $browser is an instance of Watir webdriver that you have called the unused css watch! method on
+
+    # Where $browser is an instance of Watir webdriver that you
+    # have called the unused css watch! method on
+
     $browser.check_for_unused_styles!
 end
 ```
