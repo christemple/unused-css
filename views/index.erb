@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <title>Unused CSS</title>
     <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
 </head>
 <body>
     <div id="heading">Very nice</div>
     <div class="old-error">No such style for old-error in style.css</div>
+
+    <script type="text/javascript">
+        $(function(){
+            setTimeout(function(){
+                $.get('/ajax-content', function(data){
+                    $("body").append(data);
+                });
+            }, 1000);
+        });
+    </script>
 </body>
 </html>

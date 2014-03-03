@@ -5,10 +5,6 @@ Unused CSS
 
 A Ruby gem, built from a need, to watch a suite of functional tests and gather all of the unused CSS styles.
 
-Limitations
------------
-
-Unused CSS currently only works with Watir webdriver, I will be adding more webdrivers soon.
 
 How to use
 ----------
@@ -36,6 +32,33 @@ at_exit do
 end
 ```
 
+How it works
+------------
+
+Unused CSS will override the 'goto' method on Watir webdriver.  After going to the specified web page, it will grab any
+new stylesheets it may have found and scan all stylesheets it knows about removing any used css found on the page.
+
+
+Checking for unused css/styles on your terms (AJAX scenario)
+----------
+
+I thought it would be nice to also put you in control of when you want to check for used styles on a page.
+
+A page that relies on AJAX to dynamically load content will likely benefit from being able to do so:
+
+I one of the step definitions you can simply call:
+
+```ruby
+When(/^I recheck the styles on the page$/) do
+    # Where $browser is an instance of Watir webdriver that you have called the unused css watch! method on
+    $browser.check_for_unused_styles!
+end
+```
+
+Limitations
+-----------
+
+Unused CSS currently only works with Watir webdriver, I will be adding more webdrivers soon.
 
 TODO
 ----

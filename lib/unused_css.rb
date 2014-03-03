@@ -22,6 +22,13 @@ module UnusedCSS
             stylesheet.remove_pseudo_styles!
           end
         end
+
+        def check_for_unused_styles!
+          @unused_css.stylesheets.each do |stylesheet|
+            stylesheet.styles.delete_if {|style| self.element(css: style).exist? }
+            stylesheet.remove_pseudo_styles!
+          end
+        end
       end
       watir_browser.instance_exec self, &unused_css_block
     end

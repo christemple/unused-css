@@ -22,6 +22,7 @@ end
 
 
 class Stylesheets
+  include Enumerable
   attr_accessor :stylesheets
 
   def initialize
@@ -39,6 +40,10 @@ class Stylesheets
 
   def [](uri)
     @stylesheets.find { |stylesheet| stylesheet.uri == uri }
+  end
+
+  def each &block
+    @stylesheets.each &block
   end
 
   def styles
