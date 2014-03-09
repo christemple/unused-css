@@ -1,11 +1,9 @@
 require "watir-webdriver"
-require "unused_css"
+require "unused_css/watir"
 
 system "rake"
 
 $browser = Watir::Browser.new
-$unused_css = UnusedCSS::Watcher.new
-$unused_css.watch! $browser
 
 at_exit do
   $browser.close
