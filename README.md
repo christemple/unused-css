@@ -20,11 +20,9 @@ Here's a typical 'features/support/env.rb' file using Unused CSS to watch the Wa
 
 ```ruby
 require "watir-webdriver"
-require "unused_css"
+require "unused_css/watir"
 
 $browser = Watir::Browser.new
-$unused_css = UnusedCSS::Watcher.new
-$unused_css.watch! $browser
 
 at_exit do
   $browser.close
