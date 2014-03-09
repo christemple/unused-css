@@ -14,20 +14,21 @@ module Watir
     alias_method :original_goto, :goto
     def goto(*args)
       original_goto(*args)
-      stylesheets = elements(tag_name: 'link').map {|stylesheet| stylesheet.attribute_value('href') }
-      @stylesheets.add stylesheets
-      stylesheets.each do |stylesheet|
-        @stylesheets[stylesheet].styles.delete_if {|style| self.element(css: style).exist? }
-        @stylesheets[stylesheet].remove_pseudo_styles!
-      end
+      @stylesheets.add stylesheets_on_page
+      remove_used_styles!
     end
 
-    def check_for_unused_styles!
+    def stylesheets_on_page
+      elements(tag_name: 'link').map { |stylesheet| stylesheet.attribute_value('href') }
+    end
+
+    def remove_used_styles!
       @stylesheets.each do |stylesheet|
-        stylesheet.styles.delete_if {|style| self.element(css: style).exist? }
+        stylesheet.styles.delete_if { |style| self.element(css: style).exist? }
         stylesheet.remove_pseudo_styles!
       end
     end
+    alias_method :check_for_unused_styles!, :remove_used_styles!
   end
 
 end
