@@ -55,9 +55,7 @@ In one of your step definitions you can simply call:
 ```ruby
 When(/^I recheck the styles on the page$/) do
 
-    # Where $browser is an instance of Watir webdriver that you
-    # have called the unused css watch! method on
-
+    # Where $browser is an instance of Watir webdriver
     $browser.check_for_unused_styles!
 end
 ```
