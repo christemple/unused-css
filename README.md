@@ -29,7 +29,7 @@ at_exit do
   
   # A list of all stylehseets together with their unused styles
   puts "Unused CSS"
-  $unused_css.stylesheets.each do |stylesheet|
+  $browser.stylesheets.each do |stylesheet|
     puts stylesheet.uri
     stylesheet.styles.each { |style| puts style }
   end
