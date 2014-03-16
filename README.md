@@ -3,7 +3,7 @@ Unused CSS
 
 [![Build Status](https://travis-ci.org/christemple/unused-css.png?branch=master)](https://travis-ci.org/christemple/unused-css)
 
-A Ruby gem, built from a need, to watch a suite of functional tests and gather all of the unused CSS styles.
+A Ruby gem that will watch a suite of functional tests running and gather all of the unused CSS styles.
 
 Install
 -------
@@ -31,7 +31,7 @@ at_exit do
   puts "Unused CSS"
   $browser.stylesheets.each do |stylesheet|
     puts stylesheet.uri
-    stylesheet.styles.each { |style| puts style }
+    stylesheet.unused_styles.each { |style| puts style }
   end
   
 end
@@ -64,15 +64,6 @@ Limitations
 -----------
 
 Unused CSS currently only works with Watir webdriver, I will be adding more webdrivers soon.
-
-TODO
-----
-
-There are still a few things I am looking to do with this Ruby gem.
-- Add support for more web drivers.
-- Add ability to create report after watching the tests.
-- ...not sure, you tell me :)
-
 
 Feedback
 --------
