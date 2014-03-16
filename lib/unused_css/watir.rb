@@ -15,20 +15,19 @@ module Watir
     def goto(*args)
       original_goto(*args)
       @stylesheets.add stylesheets_on_page
-      remove_used_styles!
+      check_for_unused_styles!
     end
 
     def stylesheets_on_page
       elements(tag_name: 'link').map { |stylesheet| stylesheet.attribute_value('href') }
     end
 
-    def remove_used_styles!
+    def check_for_unused_styles!
       @stylesheets.each do |stylesheet|
-        stylesheet.styles.delete_if { |style| self.element(css: style).exist? }
+        stylesheet.unused_styles.delete_if { |style| self.element(css: style).exist? }
         stylesheet.remove_pseudo_styles!
       end
     end
-    alias_method :check_for_unused_styles!, :remove_used_styles!
   end
 
 end

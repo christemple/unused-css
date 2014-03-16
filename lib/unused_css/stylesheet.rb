@@ -1,10 +1,10 @@
 require "css_parser"
 
 class Stylesheet
-  attr_accessor :uri, :styles, :parser
+  attr_accessor :uri, :unused_styles, :parser
 
   def initialize (uri)
-    @styles = Set.new
+    @unused_styles = Set.new
     @uri = uri
     parse_styles!
   end
@@ -12,11 +12,11 @@ class Stylesheet
   def parse_styles!
     @parser = CssParser::Parser.new
     @parser.load_uri! @uri
-    @parser.each_selector { |styles| @styles << styles }
+    @parser.each_selector { |style| @unused_styles << style }
   end
 
   def remove_pseudo_styles!
-    @styles.delete_if { |style| style.match /::?[\w\-]+/ }
+    @unused_styles.delete_if { |style| style.match /::?[\w\-]+/ }
   end
 end
 
@@ -46,7 +46,7 @@ class Stylesheets
     @stylesheets.each &block
   end
 
-  def styles
-    @stylesheets.inject(Set.new) {|styles, stylesheet| styles.merge stylesheet.styles }
+  def unused_styles
+    @stylesheets.inject(Set.new) {|styles, stylesheet| styles.merge stylesheet.unused_styles }
   end
 end
