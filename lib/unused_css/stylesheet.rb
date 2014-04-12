@@ -7,6 +7,8 @@ class Stylesheet
     @unused_styles = Set.new
     @uri = uri
     parse_styles!
+    remove_at_rules!
+    remove_pseudo_styles!
   end
 
   def parse_styles!
@@ -17,6 +19,10 @@ class Stylesheet
 
   def remove_pseudo_styles!
     @unused_styles.delete_if { |style| style.match /::?[\w\-]+/ }
+  end
+
+  def remove_at_rules!
+    @unused_styles.delete_if { |style| style.match /^@/ }
   end
 end
 

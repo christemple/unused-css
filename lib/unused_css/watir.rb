@@ -25,7 +25,6 @@ module Watir
     def check_for_unused_styles!
       @stylesheets.each do |stylesheet|
         stylesheet.unused_styles.delete_if { |style| self.element(css: style).exist? }
-        stylesheet.remove_pseudo_styles!
       end
     end
   end
