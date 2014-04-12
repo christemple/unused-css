@@ -7,7 +7,7 @@ class Stylesheet
     @unused_styles = Set.new
     @uri = uri
     parse_styles!
-    remove_at_rules!
+    remove_css_at_rules!
     remove_pseudo_styles!
   end
 
@@ -21,38 +21,40 @@ class Stylesheet
     @unused_styles.delete_if { |style| style.match /::?[\w\-]+/ }
   end
 
-  def remove_at_rules!
+  def remove_css_at_rules!
     @unused_styles.delete_if { |style| style.match /^@/ }
+  end
+
+  def eql?(other_stylesheet)
+    @uri == other_stylesheet.uri
+  end
+
+  def hash
+    @uri.hash
   end
 end
 
 
 class Stylesheets
-  include Enumerable
+  extend Forwardable
   attr_accessor :stylesheets
 
   def initialize
-    @stylesheets = []
+    @stylesheets = Set.new
   end
 
-  def add uris
-    uris = Array(uris)
-    uris.each { |uri| @stylesheets << Stylesheet.new(uri) unless already_included? uri }
-  end
-
-  def already_included? uri
-    @stylesheets.any? { |stylesheet| stylesheet.uri == uri }
+  def add(uris)
+    stylesheets = uris.map { |uri| Stylesheet.new(uri) }
+    @stylesheets.merge(stylesheets)
   end
 
   def [](uri)
     @stylesheets.find { |stylesheet| stylesheet.uri == uri }
   end
 
-  def each &block
-    @stylesheets.each &block
-  end
-
   def unused_styles
     @stylesheets.inject(Set.new) {|styles, stylesheet| styles.merge stylesheet.unused_styles }
   end
+
+  def_delegators :@stylesheets, :size, :each
 end
