@@ -1,7 +1,7 @@
 require "css_parser"
 
 class Stylesheet
-  attr_accessor :uri, :unused_styles, :parser
+  attr_accessor :uri, :unused_styles
 
   def initialize (uri)
     @unused_styles = Set.new
@@ -12,9 +12,9 @@ class Stylesheet
   end
 
   def parse_styles!
-    @parser = CssParser::Parser.new
-    @parser.load_uri! @uri
-    @parser.each_selector { |style| @unused_styles << style }
+    parser = CssParser::Parser.new
+    parser.load_uri! @uri
+    parser.each_selector { |style| @unused_styles << style }
   end
 
   def remove_pseudo_styles!

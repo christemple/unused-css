@@ -21,11 +21,3 @@ end
 Then "css rule '$style' should be ignored" do |style|
   fail "#{style} style was not ignored" if $browser.stylesheets.unused_styles.include? style
 end
-
-Then "only one stylesheet should be checked for unused styles" do
-  fail "More than 1 stylesheet is being checked!" unless $browser.stylesheets.size == 1
-end
-
-Then "only one stylesheet should be checked for unused styles again" do
-  fail "More than 1 stylesheet is being checked!" unless $browser.stylesheets.size == 1
-end

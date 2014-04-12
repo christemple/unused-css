@@ -34,10 +34,3 @@ Feature: A user should be able to see when styles are unused
     Then I should see 'I was pulled in by AJAX'
     When I recheck the styles on the page
     Then I should see style '#ajaxed-content' was used
-
-
-  Scenario: Going to multiple pages that use the same stylesheet
-    Given I go to the home page
-    Then only one stylesheet should be checked for unused styles
-    When I go to the home page again
-    Then only one stylesheet should be checked for unused styles again
